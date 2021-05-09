@@ -1,0 +1,94 @@
+@font-face {
+    font-family: "Gotham";
+    font-style: normal;
+    font-weight: 400;
+  
+    /* Браузер сначала попробует найти шрифт локально */
+    src: local("Gotham"),
+         /* Если не получилось, загрузит woff2 */
+         url("../fonts/gotham-medium-webfont.woff2") format("woff2"),
+         /* Если браузер не поддерживает woff2, загрузит woff */
+         url("../fonts/gotham-medium-webfont.woff") format("woff"),
+         url("../fonts/Gotham-Medium-Regular.ttf") format("opentype");
+}
+
+@font-face {
+    font-family: "GothamBook";
+    font-style: normal;
+    font-weight: 400;
+    src: local("GothamBook"),
+         url("../fonts/GothamBook.woff") format("woff"),
+         url("../fonts/GothamBook.ttf") format("opentype");;
+}
+
+@font-face {
+    font-family: "gothambold";
+    font-style: bold;
+    //font-weight: 400;
+    src: local("gothambold"),
+         url("../fonts/gothambold1.woff") format("woff"),
+         url("../fonts/gothambold1.ttf") format("opentype");;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+//font-family: 'Open Sans', sans-serif;
+
+$blue: #55b7ff;
+$purple: #7e5aff;
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: "Gotham", "Open Sans", sans-serif;
+}
+
+.slider-v {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    &__slides {
+        position: relative;
+        top: -100vh
+    }
+    &__item {
+        height: 100vh;
+    }
+    &__title {
+        font-family: "gothambold", "Open Sans", sans-serif;
+        font-size: 8rem;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    &__subtitle {
+        font-family: "GothamBook", "Open Sans", sans-serif;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    
+}
+
+.section__title {
+    font-family: "gothambold", "Open Sans", sans-serif;
+    font-size: 4.4rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* .paragraph {
+    color: lightgreen;
+}
+.text0 {
+    font-family: "Open Sans", sans-serif;
+}
+.text1 {
+    font-family: "Gotham", "Open Sans", sans-serif;
+}
+.text2 {
+    font-family: "GothamBook", "Open Sans", sans-serif;
+}
+.text3 {
+    font-family: "gothambold", "Open Sans", sans-serif;
+} */

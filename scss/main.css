@@ -1,0 +1,83 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@font-face {
+  font-family: "Gotham";
+  font-style: normal;
+  font-weight: 400;
+  /* Браузер сначала попробует найти шрифт локально */
+  src: local("Gotham"), url("../fonts/gotham-medium-webfont.woff2") format("woff2"), url("../fonts/gotham-medium-webfont.woff") format("woff"), url("../fonts/Gotham-Medium-Regular.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "GothamBook";
+  font-style: normal;
+  font-weight: 400;
+  src: local("GothamBook"), url("../fonts/GothamBook.woff") format("woff"), url("../fonts/GothamBook.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "gothambold";
+  font-style: bold;
+  src: local("gothambold"), url("../fonts/gothambold1.woff") format("woff"), url("../fonts/gothambold1.ttf") format("opentype");
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Gotham", "Open Sans", sans-serif;
+}
+
+.slider-v {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slider-v__slides {
+  position: relative;
+  top: -100vh;
+}
+
+.slider-v__item {
+  height: 100vh;
+}
+
+.slider-v__title {
+  font-family: "gothambold", "Open Sans", sans-serif;
+  font-size: 8rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.slider-v__subtitle {
+  font-family: "GothamBook", "Open Sans", sans-serif;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.section__title {
+  font-family: "gothambold", "Open Sans", sans-serif;
+  font-size: 4.4rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* .paragraph {
+    color: lightgreen;
+}
+.text0 {
+    font-family: "Open Sans", sans-serif;
+}
+.text1 {
+    font-family: "Gotham", "Open Sans", sans-serif;
+}
+.text2 {
+    font-family: "GothamBook", "Open Sans", sans-serif;
+}
+.text3 {
+    font-family: "gothambold", "Open Sans", sans-serif;
+} */
+/*# sourceMappingURL=main.css.map */
