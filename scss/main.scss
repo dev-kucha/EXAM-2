@@ -35,46 +35,340 @@
 
 $blue: #55b7ff;
 $purple: #7e5aff;
+$darkblue: #2c4058;
+$darkgrey: #4b5562;
+$white: #ffffff;
+
+$Gotham: "Gotham", "Open Sans", sans-serif;
+$GothamBook: "GothamBook", "Open Sans", sans-serif;
+$gothambold: "gothambold", "Open Sans", sans-serif;
+$OpenSans: 'Open Sans', sans-serif;
+
+/* Temporary */
+section, .top-navigation, header, .menu {
+    border: lightsalmon 1px dotted;
+
+}
+.wrapper {
+    border: maroon 1px dotted;
+}
+/*  */
 
 html {
     font-size: 10px;
+
 }
 
 body {
-    font-family: "Gotham", "Open Sans", sans-serif;
+    font-family: $Gotham;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    }
+a {
+        text-decoration: none;
+        color: currentColor;
 }
+li {
+    list-style: none;
+}
+
+.wrapper {
+    max-width: 1170px;
+    margin: 0 auto;
+    height: 100%;
+}
+  
+@media screen and (max-width: 1200px) {
+    .wrapper {
+      max-width: 80%;
+    }
+}
+
+.bulb {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    border: $white 1px solid;
+}
+
+.bulb--active {
+    background-color: $white;
+}
+
+.top-navigation {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+
+}
+
+.top-navigation .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+.logo {
+    display: inline-block;
+    height: 5.4rem;
+    //src: url("../img/monticello-logo.svg");
+}
+
+.menu {
+    display: inline;
+    color: $white;
+
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        //flex: 2;
+    }
+    &__item {
+        display: inline-block;
+        margin-right: 15px;
+    }
+    &__item-link{
+        font-size: 1.4rem;
+        font-family: $GothamBook;
+        text-transform: uppercase;
+        padding-left: 1.4rem;
+    }
+    &__item-link:hover {
+        color: $darkblue;
+    }
+}
+
+.social {
+    color: $white;
+    &__item {
+        box-sizing: border-box;
+        display: inline-block;
+        width: 3.8rem;
+        height: 3.8rem;
+        border: $white 0.1rem solid;
+        border-radius: 50%;
+        margin-left: 2.1rem;
+        text-align: center;
+        padding: 1rem;
+        cursor: pointer;
+    }
+    &__item a {
+        font-size: 1.6rem;
+    }
+    &__item .fab {
+        
+    }
+}
+.social__item:hover {
+    color: $darkblue;
+    border-color: $darkblue;
+    background-color: $white;
+    }
 
 .slider-v {
     position: relative;
     height: 100vh;
     overflow: hidden;
+    color: $white;
     &__slides {
         position: relative;
-        top: -100vh
+        top: -000vh
     }
     &__item {
         height: 100vh;
     }
+    &__item .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
     &__title {
-        font-family: "gothambold", "Open Sans", sans-serif;
+        font-family: $gothambold;
         font-size: 8rem;
+        letter-spacing: 0.5rem;
         text-transform: uppercase;
         text-align: center;
+        margin-bottom: 4rem;
     }
     &__subtitle {
-        font-family: "GothamBook", "Open Sans", sans-serif;
+        font-family: $GothamBook;
         font-size: 1.8rem;
+        letter-spacing: 0.4rem;
         text-transform: uppercase;
         text-align: center;
     }
-    
+    &__pagination {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        height: 100%;
+        bottom: 0;
+        top: 0;
+        right: 4rem;
+        margin: auto;
+        z-index: 10;
+    }
+    &__pagination-item {
+        margin: 2rem 0 2rem 0;
+    }
+    &__pagination-item--active {
+
+    }
+}
+.item-1 {
+    background: -moz-linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
+  background: -webkit-linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
+  //background: -ms-linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
+}
+
+.arrow-dow {
+    box-sizing: border-box;
+    display: inline-block;
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 10;
+    width: 3.8rem;
+    height: 3.8rem;
+    border: $white 0.1rem solid;
+    border-radius: 50%;
+    text-align: center;
+    padding: 1.2rem;
+    color: $white;
+    cursor: pointer;
+}
+.fa-chevron-down {
+    font-size: 1.4rem;
+}
+.arrow-dow:hover {
+color: $darkblue;
+border-color: $darkblue;
+background-color: $white;
 }
 
 .section__title {
-    font-family: "gothambold", "Open Sans", sans-serif;
+    font-family: $Gotham;
     font-size: 4.4rem;
     text-transform: uppercase;
     text-align: center;
+    color: $darkblue;
+}
+
+.project {
+    &__picture {
+
+    }
+    &__content {
+
+    }
+    &__category {
+        font-family: $GothamBook;
+        font-size: 2.2rem;
+        text-transform: uppercase;
+        color: $darkblue;
+    }
+    &__title {
+        font-family: $gothambold;
+        font-size: 4.4rem;
+        text-transform: uppercase;
+        color: $darkblue;
+    }
+    &__description {
+        font-family: $OpenSans;
+        font-size: 1.8rem;
+        line-height: 3rem;
+    }
+    &__more-details {
+    }
+    &__location {
+        font-family: $OpenSans;
+        font-size: 1.8rem;
+        font-style: italic;
+        color: $darkblue;
+    }
+}
+
+               
+
+.news {
+    background: -moz-linear-gradient( 45deg, rgb(60,127,212) 0%, rgb(36,204,250) 100%);
+    background: -webkit-linear-gradient( 45deg, rgb(60,127,212) 0%, rgb(36,204,250) 100%);
+    //background: -ms-linear-gradient( 45deg, rgb(60,127,212) 0%, rgb(36,204,250) 100%);
+}
+
+.slider-h {
+    &__slides {
+
+    }
+}
+.new {
+    &__picture {
+
+    }
+    &__title {
+        font-family: $gothambold;
+        font-size: 2.2rem;
+        text-transform: uppercase;
+        color: $darkblue;
+    }
+    &__subtitle {
+        font-family: $OpenSans;
+        font-size: 1.8rem;
+        line-height: 3rem;
+        color: $darkgrey;
+    }
+    &__discription {
+
+    }
+}
+
+.write {
+    &__pic {
+
+    }
+    &__name {
+        font-family: $GothamBook;
+        font-size: 1.8rem;
+        color: $darkblue;
+    }
+    &__data {
+        font-family: $GothamBook;
+        font-size: 1.4rem;
+        color: $blue;
+    }
+} 
+
+.contact {
+    &__row {
+        font-family: $GothamBook;
+        font-size: 1.8rem;
+        color: $darkblue;
+    }
+}
+
+.footer {
+    background: -moz-linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
+    background: -webkit-linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
+    //background: -ms-linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
+    color: $white;
+    &__1-line {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 4.3rem;
+    }
+}
+
+.copyrights {
+    font-family: $GothamBook;
+    font-size: 1.4rem;
 }
 
 /* .paragraph {

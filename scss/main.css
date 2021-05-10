@@ -21,48 +21,339 @@
   src: local("gothambold"), url("../fonts/gothambold1.woff") format("woff"), url("../fonts/gothambold1.ttf") format("opentype");
 }
 
+/* Temporary */
+section, .top-navigation, header, .menu {
+  border: lightsalmon 1px dotted;
+}
+
+.wrapper {
+  border: maroon 1px dotted;
+}
+
+/*  */
 html {
   font-size: 10px;
 }
 
 body {
   font-family: "Gotham", "Open Sans", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+li {
+  list-style: none;
+}
+
+.wrapper {
+  max-width: 1170px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  .wrapper {
+    max-width: 80%;
+  }
+}
+
+.bulb {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: #ffffff 1px solid;
+}
+
+.bulb--active {
+  background-color: #ffffff;
+}
+
+.top-navigation {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+
+.top-navigation .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logo {
+  display: inline-block;
+  height: 5.4rem;
+}
+
+.menu {
+  display: inline;
+  color: #ffffff;
+}
+
+.menu__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.menu__item {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.menu__item-link {
+  font-size: 1.4rem;
+  font-family: "GothamBook", "Open Sans", sans-serif;
+  text-transform: uppercase;
+  padding-left: 1.4rem;
+}
+
+.menu__item-link:hover {
+  color: #2c4058;
+}
+
+.social {
+  color: #ffffff;
+}
+
+.social__item {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  width: 3.8rem;
+  height: 3.8rem;
+  border: #ffffff 0.1rem solid;
+  border-radius: 50%;
+  margin-left: 2.1rem;
+  text-align: center;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.social__item a {
+  font-size: 1.6rem;
+}
+
+.social__item:hover {
+  color: #2c4058;
+  border-color: #2c4058;
+  background-color: #ffffff;
 }
 
 .slider-v {
   position: relative;
   height: 100vh;
   overflow: hidden;
+  color: #ffffff;
 }
 
 .slider-v__slides {
   position: relative;
-  top: -100vh;
+  top: -000vh;
 }
 
 .slider-v__item {
   height: 100vh;
 }
 
+.slider-v__item .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .slider-v__title {
   font-family: "gothambold", "Open Sans", sans-serif;
   font-size: 8rem;
+  letter-spacing: 0.5rem;
   text-transform: uppercase;
   text-align: center;
+  margin-bottom: 4rem;
 }
 
 .slider-v__subtitle {
   font-family: "GothamBook", "Open Sans", sans-serif;
   font-size: 1.8rem;
+  letter-spacing: 0.4rem;
   text-transform: uppercase;
   text-align: center;
 }
 
+.slider-v__pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  height: 100%;
+  bottom: 0;
+  top: 0;
+  right: 4rem;
+  margin: auto;
+  z-index: 10;
+}
+
+.slider-v__pagination-item {
+  margin: 2rem 0 2rem 0;
+}
+
+.item-1 {
+  background: -webkit-linear-gradient(45deg, #55b7ff 0%, #7e5aff 100%);
+}
+
+.arrow-dow {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 10;
+  width: 3.8rem;
+  height: 3.8rem;
+  border: #ffffff 0.1rem solid;
+  border-radius: 50%;
+  text-align: center;
+  padding: 1.2rem;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.fa-chevron-down {
+  font-size: 1.4rem;
+}
+
+.arrow-dow:hover {
+  color: #2c4058;
+  border-color: #2c4058;
+  background-color: #ffffff;
+}
+
 .section__title {
-  font-family: "gothambold", "Open Sans", sans-serif;
+  font-family: "Gotham", "Open Sans", sans-serif;
   font-size: 4.4rem;
   text-transform: uppercase;
   text-align: center;
+  color: #2c4058;
+}
+
+.project__category {
+  font-family: "GothamBook", "Open Sans", sans-serif;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  color: #2c4058;
+}
+
+.project__title {
+  font-family: "gothambold", "Open Sans", sans-serif;
+  font-size: 4.4rem;
+  text-transform: uppercase;
+  color: #2c4058;
+}
+
+.project__description {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.8rem;
+  line-height: 3rem;
+}
+
+.project__location {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.8rem;
+  font-style: italic;
+  color: #2c4058;
+}
+
+.news {
+  background: -webkit-linear-gradient(45deg, #3c7fd4 0%, #24ccfa 100%);
+}
+
+.new__title {
+  font-family: "gothambold", "Open Sans", sans-serif;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  color: #2c4058;
+}
+
+.new__subtitle {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.8rem;
+  line-height: 3rem;
+  color: #4b5562;
+}
+
+.write__name {
+  font-family: "GothamBook", "Open Sans", sans-serif;
+  font-size: 1.8rem;
+  color: #2c4058;
+}
+
+.write__data {
+  font-family: "GothamBook", "Open Sans", sans-serif;
+  font-size: 1.4rem;
+  color: #55b7ff;
+}
+
+.contact__row {
+  font-family: "GothamBook", "Open Sans", sans-serif;
+  font-size: 1.8rem;
+  color: #2c4058;
+}
+
+.footer {
+  background: -webkit-linear-gradient(45deg, #55b7ff 0%, #7e5aff 100%);
+  color: #ffffff;
+}
+
+.footer__1-line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 4.3rem;
+}
+
+.copyrights {
+  font-family: "GothamBook", "Open Sans", sans-serif;
+  font-size: 1.4rem;
 }
 
 /* .paragraph {
