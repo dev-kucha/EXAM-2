@@ -121,6 +121,8 @@ li {
 .menu {
     display: inline;
     color: $white;
+    flex: 1;
+    max-width: 60rem;
 
     &__items {
         display: flex;
@@ -135,10 +137,13 @@ li {
         font-size: 1.4rem;
         font-family: $GothamBook;
         text-transform: uppercase;
-        padding-left: 1.4rem;
+        
     }
     &__item-link:hover {
         color: $darkblue;
+    }
+    &__item-link span {
+        margin-right: 1.4rem;
     }
 }
 
@@ -176,10 +181,19 @@ li {
     color: $white;
     &__slides {
         position: relative;
-        top: -000vh
+        top: 0vh;
+        /* ??? */
+        //animation-name: fade;
+        //animation-duration: 1.5s;
+        /* ??? */
+        transition: 0.6s ease;
+
     }
     &__item {
         height: 100vh;
+        background: -moz-linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
+        background: -webkit-linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
+        //background: -ms-linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
     }
     &__item .wrapper {
         display: flex;
@@ -215,16 +229,13 @@ li {
     }
     &__pagination-item {
         margin: 2rem 0 2rem 0;
+
     }
     &__pagination-item--active {
 
     }
 }
-.item-1 {
-    background: -moz-linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
-  background: -webkit-linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
-  //background: -ms-linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
-}
+
 
 .arrow-dow {
     box-sizing: border-box;
