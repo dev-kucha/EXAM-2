@@ -100,10 +100,15 @@ li {
 }
 
 .top-navigation {
-    position: absolute;
+    position: fixed;
     width: 100%;
     z-index: 2;
+}
 
+.top-navigation--fill {
+    background: -moz-linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
+    background: -webkit-linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
+    //background: -ms-linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
 }
 
 .top-navigation .wrapper {

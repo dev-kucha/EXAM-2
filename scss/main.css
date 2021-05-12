@@ -78,9 +78,13 @@ li {
 }
 
 .top-navigation {
-  position: absolute;
+  position: fixed;
   width: 100%;
   z-index: 2;
+}
+
+.top-navigation--fill {
+  background: -webkit-linear-gradient(45deg, #55b7ff 0%, #7e5aff 100%);
 }
 
 .top-navigation .wrapper {
