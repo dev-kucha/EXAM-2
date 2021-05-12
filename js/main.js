@@ -2,7 +2,7 @@
 
 /* Плавна прокрутка меню */
 let anchors = document.querySelectorAll('.menu a[href*="#"]');
-console.log(anchors); //видалити
+//console.log(anchors); //видалити
 for (anchor of anchors) {
     if (anchor) {
         anchor.addEventListener('click', function (e) {

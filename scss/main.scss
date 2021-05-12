@@ -44,16 +44,6 @@ $GothamBook: "GothamBook", "Open Sans", sans-serif;
 $gothambold: "gothambold", "Open Sans", sans-serif;
 $OpenSans: 'Open Sans', sans-serif;
 
-/* Temporary */
-section, .top-navigation, header, .menu {
-    border: lightsalmon 1px dotted;
-
-}
-.wrapper {
-    border: maroon 1px dotted;
-}
-/*  */
-
 html {
     font-size: 10px;
 
@@ -68,17 +58,25 @@ body {
 
     }
 a {
-        text-decoration: none;
-        color: currentColor;
+    text-decoration: none;
+    color: currentColor;
 }
 li {
     list-style: none;
+}
+h1, h2, h3, h4 {
+    margin: 0;
 }
 
 .wrapper {
     max-width: 1170px;
     margin: 0 auto;
     height: 100%;
+}
+.wrapper-narrow {
+    max-width: 770px;
+    margin: 0 auto;
+    //height: 100%;
 }
   
 @media screen and (max-width: 1200px) {
@@ -103,12 +101,13 @@ li {
     position: fixed;
     width: 100%;
     z-index: 2;
+//    border: 1px maroon dotted;
+    padding-top: 5rem;
+    padding-bottom: 2rem;    
 }
 
 .top-navigation--fill {
-    background: -moz-linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
-    background: -webkit-linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
-    //background: -ms-linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
+    background: linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
 }
 
 .top-navigation .wrapper {
@@ -169,9 +168,7 @@ li {
     &__item a {
         font-size: 1.6rem;
     }
-    &__item .fab {
-        
-    }
+
 }
 .social__item:hover {
     color: $darkblue;
@@ -196,9 +193,11 @@ li {
     }
     &__item {
         height: 100vh;
-        background: -moz-linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
-        background: -webkit-linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
-        //background: -ms-linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
+        
+        //background: linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
+        background: url(../img/bg-1.png), linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
+        background-repeat: no-repeat;
+        background-size: cover;
     }
     &__item .wrapper {
         display: flex;
@@ -264,44 +263,66 @@ li {
     font-size: 1.4rem;
 }
 .arrow-dow:hover {
-color: $darkblue;
-border-color: $darkblue;
-background-color: $white;
+    color: $darkblue;
+    border-color: $darkblue;
+    background-color: $white;
 }
 
-.section__title {
-    font-family: $Gotham;
-    font-size: 4.4rem;
-    text-transform: uppercase;
-    text-align: center;
-    color: $darkblue;
+.section {
+    padding-top: 14rem;
+    &__title {
+        font-family: $Gotham;
+        font-size: 4.4rem;
+        text-transform: uppercase;
+        text-align: center;
+        color: $darkblue;
+        margin-bottom: 10rem;
+    }
 }
+
 
 .project {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 14rem;
     &__picture {
-
+        width: 63rem;
+        height: 47rem;
+        background-color: $blue;
     }
     &__content {
-
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        width: 50rem;
+        height: 47rem;
+        overflow: hidden;
     }
     &__category {
         font-family: $GothamBook;
         font-size: 2.2rem;
         text-transform: uppercase;
         color: $darkblue;
+        margin-bottom: 1.8rem;
     }
     &__title {
         font-family: $gothambold;
         font-size: 4.4rem;
         text-transform: uppercase;
         color: $darkblue;
+        margin-bottom: 4rem;
     }
     &__description {
         font-family: $OpenSans;
         font-size: 1.8rem;
         line-height: 3rem;
+        height: 9rem;
+        overflow: hidden;
+        margin-bottom: 4rem;
     }
     &__more-details {
+        margin-bottom: 6rem;
     }
     &__location {
         font-family: $OpenSans;
@@ -310,23 +331,53 @@ background-color: $white;
         color: $darkblue;
     }
 }
-
-               
+.project-odd {
+    flex-direction: row;
+}
+.project-even {
+    flex-direction: row-reverse;
+}           
 
 .news {
     background: -moz-linear-gradient( 45deg, rgb(60,127,212) 0%, rgb(36,204,250) 100%);
     background: -webkit-linear-gradient( 45deg, rgb(60,127,212) 0%, rgb(36,204,250) 100%);
     //background: -ms-linear-gradient( 45deg, rgb(60,127,212) 0%, rgb(36,204,250) 100%);
+    height: 80rem; //delete
 }
 
 .slider-h {
+    height: 54rem;
+    position: relative;
+    margin-bottom: 20rem;
     &__slides {
-
+        display: flex;
+        justify-content: start;
+        gap: 3rem;
+        position: absolute;
+        left: 0;
+        height: 54rem;
+    }
+    &__item {
+        width: 37rem;
     }
 }
 .new {
-    &__picture {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
+    &__picture {
+        height: 24rem;
+        background-color: $darkgrey;
+    }
+    &__content {
+        padding: 3rem 2rem 3rem 2rem;
+        background-color: $white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: 1;
     }
     &__title {
         font-family: $gothambold;
@@ -339,6 +390,8 @@ background-color: $white;
         font-size: 1.8rem;
         line-height: 3rem;
         color: $darkgrey;
+        height: 6rem;
+        overflow: hidden;
     }
     &__discription {
 
@@ -346,34 +399,93 @@ background-color: $white;
 }
 
 .write {
+    position: relative;
     &__pic {
-
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        background-color: $purple;
+        position: absolute;
+        left: 0;
+        bottom: 0;
     }
     &__name {
         font-family: $GothamBook;
         font-size: 1.8rem;
         color: $darkblue;
+        margin-left: 8rem;
+        margin-bottom: 1.1rem;
     }
     &__data {
         font-family: $GothamBook;
         font-size: 1.4rem;
         color: $blue;
+        margin-left: 8rem;
+        margin-bottom: 1.1rem;
     }
 } 
 
+.gallery {
+    border: 1px maroon dotted;
+    padding-bottom: 14rem;
+    text-align: center;
+    &__items {
+        width: 100%;
+        height: 44rem;
+        background-color: $blue;
+        margin-bottom: 6rem;
+    }
+    &__item {
+
+    }
+    
+}
+
 .contact {
+    //margin-bottom: 5rem;
+    background-color: lightgrey;
+    height: 70rem;
     &__row {
         font-family: $GothamBook;
         font-size: 1.8rem;
         color: $darkblue;
+        margin-bottom: 4.6rem;
+    }
+}
+.contact .wrapper-narrow {
+    transform: translateY(40rem);
+    background-color: $white;
+    padding-top: 6rem;
+    //background: url(../img/bg-3.png);
+    background-color: $white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    //background-origin: padding-box;
+    //background-position: bottom;
+}
+
+.contact .section__title {
+    margin-bottom: 6rem;
+}
+
+.colls {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 6rem 0 6rem;;
+    &__coll {
+        width: 48%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
 }
 
 .footer {
-    background: -moz-linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
-    background: -webkit-linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
-    //background: -ms-linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
+    background: url(../img/bg-4.png), linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
     color: $white;
+    padding: 20rem 0 20rem 0;
     &__1-line {
         display: flex;
         justify-content: space-between;
@@ -386,19 +498,3 @@ background-color: $white;
     font-family: $GothamBook;
     font-size: 1.4rem;
 }
-
-/* .paragraph {
-    color: lightgreen;
-}
-.text0 {
-    font-family: "Open Sans", sans-serif;
-}
-.text1 {
-    font-family: "Gotham", "Open Sans", sans-serif;
-}
-.text2 {
-    font-family: "GothamBook", "Open Sans", sans-serif;
-}
-.text3 {
-    font-family: "gothambold", "Open Sans", sans-serif;
-} */
