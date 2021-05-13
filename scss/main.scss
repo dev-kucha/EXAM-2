@@ -356,7 +356,7 @@ h1, h2, h3, h4 {
     background-repeat: no-repeat;
     background-size: cover;
 
-    height: 90rem; //delete
+    height: 100rem; //delete
 
     /*     background: url(../img/bg-4.png), linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
     background-repeat: no-repeat;
@@ -364,26 +364,31 @@ h1, h2, h3, h4 {
 }
 
 .slider-h {
-    height: 54rem;
-    position: relative;
-    margin-bottom: 20rem;
+    //height: 54rem;
+    //position: relative;
+    //margin-bottom: 20rem;
     &__slides {
-        display: flex;
-        justify-content: start;
-        gap: 3rem;
-        position: absolute;
-        left: 0;
-        height: 54rem;
+        //display: flex;
+        //justify-content: start;
+        //gap: 3rem;
+        //position: absolute;
+        //left: 0;
+        //height: 54rem;
     }
     &__item {
-        width: 37rem;
+        //width: 30rem;
+        
     }
 }
+
+
 .new {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
 
     &__picture {
         height: 24rem;

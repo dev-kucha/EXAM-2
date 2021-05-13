@@ -66,3 +66,14 @@ for (let i = 0; i < bulbsV.length; i++) {
     });
 }
 
+/* Ініціалізація слайдера горизонтального */
+// после готовности DOM
+document.addEventListener('DOMContentLoaded', function () {
+    new ChiefSlider('.slider', {
+        loop: true,
+        autoplay: true,
+        interval: 4000,
+        swipe: true,
+        refresh: false
+    });
+});
