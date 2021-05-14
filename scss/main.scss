@@ -3,11 +3,11 @@
     font-style: normal;
     font-weight: 400;
   
-    /* Браузер сначала попробует найти шрифт локально */
+    /* Спочатку шукаємо шрифт локально шрифт локально */
     src: local("Gotham"),
-         /* Если не получилось, загрузит woff2 */
+         /* Якщо немає, завантажуємо woff2 */
          url("../fonts/gotham-medium-webfont.woff2") format("woff2"),
-         /* Если браузер не поддерживает woff2, загрузит woff */
+         /* Якщо браузер не підтримує woff2, завантажуємо woff */
          url("../fonts/gotham-medium-webfont.woff") format("woff"),
          url("../fonts/Gotham-Medium-Regular.ttf") format("opentype");
 }
@@ -24,15 +24,14 @@
 @font-face {
     font-family: "gothambold";
     font-style: bold;
-    //font-weight: 400;
     src: local("gothambold"),
          url("../fonts/gothambold1.woff") format("woff"),
          url("../fonts/gothambold1.ttf") format("opentype");;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-//font-family: 'Open Sans', sans-serif;
 
+/* Декларуємо змінні */
 $blue: #55b7ff;
 $purple: #7e5aff;
 $darkblue: #2c4058;
@@ -46,7 +45,6 @@ $OpenSans: 'Open Sans', sans-serif;
 
 html {
     font-size: 10px;
-
 }
 
 body {
@@ -55,15 +53,17 @@ body {
     margin: 0;
     padding: 0;
     border: 0;
-
     }
+
 a {
     text-decoration: none;
     color: currentColor;
 }
+
 li {
     list-style: none;
 }
+
 h1, h2, h3, h4 {
     margin: 0;
 }
@@ -73,10 +73,10 @@ h1, h2, h3, h4 {
     margin: 0 auto;
     height: 100%;
 }
+
 .wrapper-narrow {
     max-width: 770px;
     margin: 0 auto;
-    //height: 100%;
 }
   
 @media screen and (max-width: 1200px) {
@@ -101,7 +101,6 @@ h1, h2, h3, h4 {
     position: fixed;
     width: 100%;
     z-index: 2;
-//    border: 1px maroon dotted;
     padding-top: 5rem;
     padding-bottom: 2rem;    
 }
@@ -114,12 +113,11 @@ h1, h2, h3, h4 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    }
+}
 
 .logo {
     display: inline-block;
     height: 5.4rem;
-    //src: url("../img/monticello-logo.svg");
 }
 
 .menu {
@@ -131,21 +129,24 @@ h1, h2, h3, h4 {
     &__items {
         display: flex;
         justify-content: space-between;
-        //flex: 2;
     }
+
     &__item {
         display: inline-block;
         margin-right: 15px;
     }
+
     &__item-link{
         font-size: 1.4rem;
         font-family: $GothamBook;
         text-transform: uppercase;
         
     }
+
     &__item-link:hover {
         color: $darkblue;
     }
+
     &__item-link span {
         margin-right: 1.4rem;
     }
@@ -153,6 +154,7 @@ h1, h2, h3, h4 {
 
 .social {
     color: $white;
+
     &__item {
         box-sizing: border-box;
         display: inline-block;
@@ -165,6 +167,7 @@ h1, h2, h3, h4 {
         padding: 1rem;
         cursor: pointer;
     }
+
     &__item a {
         font-size: 1.6rem;
     }
@@ -181,29 +184,26 @@ h1, h2, h3, h4 {
     height: 100vh;
     overflow: hidden;
     color: $white;
+
     &__slides {
         position: relative;
         top: 0vh;
-        /* ??? */
-        //animation-name: fade;
-        //animation-duration: 1.5s;
-        /* ??? */
         transition: 0.6s ease;
-
     }
+
     &__item {
         height: 100vh;
-        
-        //background: linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
         background: url(../img/bg-1.png), linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
         background-repeat: no-repeat;
         background-size: cover;
     }
+
     &__item .wrapper {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
+
     &__title {
         font-family: $gothambold;
         font-size: 8rem;
@@ -212,6 +212,7 @@ h1, h2, h3, h4 {
         text-align: center;
         margin-bottom: 4rem;
     }
+
     &__subtitle {
         font-family: $GothamBook;
         font-size: 1.8rem;
@@ -219,6 +220,7 @@ h1, h2, h3, h4 {
         text-transform: uppercase;
         text-align: center;
     }
+
     &__pagination {
         display: flex;
         flex-direction: column;
@@ -231,12 +233,9 @@ h1, h2, h3, h4 {
         margin: auto;
         z-index: 10;
     }
+
     &__pagination-item {
         margin: 2rem 0 2rem 0;
-
-    }
-    &__pagination-item--active {
-
     }
 }
 
@@ -259,9 +258,11 @@ h1, h2, h3, h4 {
     color: $white;
     cursor: pointer;
 }
+
 .fa-chevron-down {
     font-size: 1.4rem;
 }
+
 .arrow-dow:hover {
     color: $darkblue;
     border-color: $darkblue;
@@ -270,6 +271,7 @@ h1, h2, h3, h4 {
 
 .section {
     padding-top: 14rem;
+
     &__title {
         font-family: $Gotham;
         font-size: 4.4rem;
@@ -280,17 +282,18 @@ h1, h2, h3, h4 {
     }
 }
 
-
 .project {
     display: flex;
     justify-content: space-between;
     margin-top: 21rem;
     margin-bottom: 14rem;
+
     &__picture {
         width: 63rem;
         height: 47rem;
         background-color: $darkgrey;
     }
+
     &__content {
         display: flex;
         flex-direction: column;
@@ -300,6 +303,7 @@ h1, h2, h3, h4 {
         height: 47rem;
         overflow: hidden;
     }
+
     &__category {
         font-family: $GothamBook;
         font-size: 2.2rem;
@@ -307,6 +311,7 @@ h1, h2, h3, h4 {
         color: $darkblue;
         margin-bottom: 1.8rem;
     }
+
     &__title {
         font-family: $gothambold;
         font-size: 4.4rem;
@@ -314,6 +319,7 @@ h1, h2, h3, h4 {
         color: $darkblue;
         margin-bottom: 4rem;
     }
+
     &__description {
         font-family: $OpenSans;
         font-size: 1.8rem;
@@ -322,9 +328,11 @@ h1, h2, h3, h4 {
         overflow: hidden;
         margin-bottom: 4rem;
     }
+
     &__more-details {
         margin-bottom: 6rem;
     }
+
     &__location {
         font-family: $OpenSans;
         font-size: 1.8rem;
@@ -335,6 +343,7 @@ h1, h2, h3, h4 {
 .project-odd {
     flex-direction: row;
 }
+
 .project-odd .project__picture {
     box-shadow: -215px -70px $blue;
 }
@@ -348,39 +357,11 @@ h1, h2, h3, h4 {
 }
 
 .news {
-    //background: -moz-linear-gradient( 45deg, rgb(60,127,212) 0%, rgb(36,204,250) 100%);
-    //background: -webkit-linear-gradient( 45deg, rgb(60,127,212) 0%, rgb(36,204,250) 100%);
-    //background: -ms-linear-gradient( 45deg, rgb(60,127,212) 0%, rgb(36,204,250) 100%);
-
     background: url(../img/bg-2.png), linear-gradient( 45deg, rgb(60,127,212) 0%, rgb(36,204,250) 100%);
     background-repeat: no-repeat;
     background-size: cover;
-
-    height: 100rem; //delete
-
-    /*     background: url(../img/bg-4.png), linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);
-    background-repeat: no-repeat;
-    background-size: cover; */
+    height: 90rem;
 }
-
-.slider-h {
-    //height: 54rem;
-    //position: relative;
-    //margin-bottom: 20rem;
-    &__slides {
-        //display: flex;
-        //justify-content: start;
-        //gap: 3rem;
-        //position: absolute;
-        //left: 0;
-        //height: 54rem;
-    }
-    &__item {
-        //width: 30rem;
-        
-    }
-}
-
 
 .new {
     height: 100%;
@@ -394,6 +375,7 @@ h1, h2, h3, h4 {
         height: 24rem;
         background-color: $darkgrey;
     }
+
     &__content {
         padding: 3rem 2rem 3rem 2rem;
         background-color: $white;
@@ -402,6 +384,7 @@ h1, h2, h3, h4 {
         justify-content: space-between;
         flex: 1;
     }
+
     &__title {
         font-family: $gothambold;
         font-size: 2.2rem;
@@ -412,6 +395,7 @@ h1, h2, h3, h4 {
         overflow: hidden;
         margin-bottom: 2.4rem;
     }
+
     &__subtitle {
         font-family: $OpenSans;
         font-size: 1.8rem;
@@ -421,6 +405,7 @@ h1, h2, h3, h4 {
         overflow: hidden;
         margin-bottom: 5.2rem;
     }
+
     &__discription {
         height: auto;
     }
@@ -438,6 +423,7 @@ h1, h2, h3, h4 {
         left: 0;
         bottom: 0;
     }
+
     &__name {
         font-family: $GothamBook;
         font-size: 1.8rem;
@@ -445,6 +431,7 @@ h1, h2, h3, h4 {
         margin-left: 8rem;
         margin-bottom: 1.1rem;
     }
+
     &__data {
         font-family: $GothamBook;
         font-size: 1.4rem;
@@ -455,9 +442,9 @@ h1, h2, h3, h4 {
 } 
 
 .gallery {
-    border: 1px maroon dotted;
     padding-bottom: 14rem;
     text-align: center;
+
     &__items {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -465,7 +452,6 @@ h1, h2, h3, h4 {
         grid-gap: 1em;
         width: 100%;
         height: 44rem;
-        
         margin-bottom: 6rem;
     }
 
@@ -473,7 +459,6 @@ h1, h2, h3, h4 {
         background-color: $blue;
         text-align: center;
         padding-top: 35%;
-        //border: 1px dotted maroon;
     }
 
     &__item:nth-child(1) {
@@ -481,18 +466,14 @@ h1, h2, h3, h4 {
         grid-column-start: 1;
         grid-column-end: 3;
         grid-row-start: 1;
-        grid-row-end: 3
+        grid-row-end: 3;
     }
-    &__item:nth-child(n) {
-        
-    }
-    
 }
 
 .contact {
-    //margin-bottom: 5rem;
     background-color: lightgrey;
     height: 70rem;
+
     &__row {
         font-family: $GothamBook;
         font-size: 1.8rem;
@@ -500,16 +481,14 @@ h1, h2, h3, h4 {
         margin-bottom: 4.6rem;
     }
 }
+
 .contact .wrapper-narrow {
     transform: translateY(40rem);
     background-color: $white;
     padding-top: 6rem;
-    //background: url(../img/bg-3.png);
     background-color: $white;
     background-repeat: no-repeat;
     background-size: cover;
-    //background-origin: padding-box;
-    //background-position: bottom;
 }
 
 .contact .section__title {
@@ -519,7 +498,8 @@ h1, h2, h3, h4 {
 .colls {
     display: flex;
     justify-content: space-between;
-    margin: 0 6rem 0 6rem;;
+    margin: 0 6rem 0 6rem;
+
     &__coll {
         width: 48%;
         display: flex;
@@ -534,6 +514,7 @@ h1, h2, h3, h4 {
     background-size: cover;
     color: $white;
     padding: 20rem 0 20rem 0;
+    
     &__1-line {
         display: flex;
         justify-content: space-between;

@@ -2,25 +2,21 @@
 
 /* Плавна прокрутка меню */
 let anchors = document.querySelectorAll('.menu a[href*="#"]');
-//console.log(anchors); //видалити
+
 for (anchor of anchors) {
     if (anchor) {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             anchorId = this.getAttribute('href');
-            //console.log(anchorId.offsetTop);
             document.querySelector(anchorId).scrollIntoView({
                 behavior: 'smooth', block: 'start',
             });
-
-            /*document.querySelector(anchorId).scrolTo(anchorId.offsetTop); */
-
-            //window.scrollBy(0, -topNavigation.offsetHeight)
         })
     }
 }
 /* Тоглення маркерів пунктів меню */
 let bulbsM = document.querySelectorAll('.menu .bulb');
+
 window.addEventListener('scroll', function () {
     for (anchor of anchors) {
         anchorId = anchor.getAttribute('href');
@@ -44,6 +40,7 @@ window.addEventListener('scroll', function () {
 
 /* Стрілка вниз */
 let arrowDown = document.querySelector('.arrow-dow');
+
 arrowDown.addEventListener('click', function () {
     document.querySelector('#projects').scrollIntoView({
         behavior: 'smooth', block: 'start'
@@ -65,8 +62,7 @@ for (let i = 0; i < bulbsV.length; i++) {
     });
 }
 
-/* Ініціалізація слайдера горизонтального */
-// после готовности DOM
+/* Ініціалізація слайдера горизонтального після готовності DOM */
 document.addEventListener('DOMContentLoaded', function () {
     new ChiefSlider('.slider', {
         loop: true,
@@ -84,4 +80,4 @@ window.addEventListener('click', function (e) {
         e.preventDefault();
     }
 })
-/* не працює як слід*/
+/* Ще не працює як слід, потрібно делегувати клік батьку */
