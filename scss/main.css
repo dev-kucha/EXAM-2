@@ -439,7 +439,11 @@ h1, h2, h3, h4 {
   font-family: "gothambold", "Open Sans", sans-serif;
   font-size: 2.2rem;
   text-transform: uppercase;
+  line-height: 3.2rem;
   color: #2c4058;
+  height: 6rem;
+  overflow: hidden;
+  margin-bottom: 2.4rem;
 }
 
 .new__subtitle {
@@ -449,6 +453,11 @@ h1, h2, h3, h4 {
   color: #4b5562;
   height: 6rem;
   overflow: hidden;
+  margin-bottom: 5.2rem;
+}
+
+.new__discription {
+  height: auto;
 }
 
 .write {
@@ -502,6 +511,8 @@ h1, h2, h3, h4 {
 
 .gallery__item {
   background-color: #55b7ff;
+  text-align: center;
+  padding-top: 35%;
 }
 
 .gallery__item:nth-child(1) {

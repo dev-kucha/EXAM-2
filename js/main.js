@@ -11,7 +11,6 @@ for (anchor of anchors) {
             //console.log(anchorId.offsetTop);
             document.querySelector(anchorId).scrollIntoView({
                 behavior: 'smooth', block: 'start',
-
             });
 
             /*document.querySelector(anchorId).scrolTo(anchorId.offsetTop); */
@@ -77,3 +76,12 @@ document.addEventListener('DOMContentLoaded', function () {
         refresh: false
     });
 });
+
+/* Деактивація штатних посилань на контролах горизонтального слайдера */
+let hSliderControlsArrow = document.querySelectorAll('.slider__control i');
+window.addEventListener('click', function (e) {
+    for (arrow of hSliderControlsArrow) {
+        e.preventDefault();
+    }
+})
+/* не працює як слід*/

@@ -114,7 +114,7 @@ function ChiefSlider(selector, config) {
 }
 
 // подключения обработчиков событий для слайдера
-ChiefSlider.prototype._addEventListener = function() {
+ChiefSlider.prototype._addEventListener = function () {
   var $root = this._$root;
   var $items = this._$items;
   var config = this._config;
@@ -211,7 +211,7 @@ ChiefSlider.prototype._addEventListener = function() {
 };
 
 // update values of extreme properties
-ChiefSlider.prototype.__refreshExtremeValues = function() {
+ChiefSlider.prototype.__refreshExtremeValues = function () {
   var $itemList = this._$itemList;
   this._minOrder = +$itemList[0].dataset.order;
   this._maxOrder = this._minOrder;
@@ -235,7 +235,7 @@ ChiefSlider.prototype.__refreshExtremeValues = function() {
 };
 
 // update position of item
-ChiefSlider.prototype._balancingItems = function() {
+ChiefSlider.prototype._balancingItems = function () {
   if (!this._balancingItemsFlag) {
     return;
   }
@@ -277,7 +277,7 @@ ChiefSlider.prototype._balancingItems = function() {
 };
 
 // _setActiveClass
-ChiefSlider.prototype._setActiveClass = function() {
+ChiefSlider.prototype._setActiveClass = function () {
   var activeItems = this._activeItems;
   var $itemList = this._$itemList;
   for (var i = 0, length = $itemList.length; i < length; i++) {
@@ -292,7 +292,7 @@ ChiefSlider.prototype._setActiveClass = function() {
 };
 
 // _updateIndicators
-ChiefSlider.prototype._updateIndicators = function() {
+ChiefSlider.prototype._updateIndicators = function () {
   var $indicatorList = this._$indicatorList;
   var $itemList = this._$itemList;
   if (!$indicatorList.length) {
@@ -309,9 +309,9 @@ ChiefSlider.prototype._updateIndicators = function() {
 };
 
 // move slides
-ChiefSlider.prototype._move = function() {
+ChiefSlider.prototype._move = function () {
   var step = this._direction ===
-   'next' ? -this._transformStep : this._transformStep;
+    'next' ? -this._transformStep : this._transformStep;
   var transform = this._transform + step;
   if (!this._config.loop) {
     var endTransformValue =
@@ -359,19 +359,19 @@ ChiefSlider.prototype._move = function() {
 };
 
 // _moveToNext
-ChiefSlider.prototype._moveToNext = function() {
+ChiefSlider.prototype._moveToNext = function () {
   this._direction = 'next';
   this._move();
 };
 
 // _moveToPrev
-ChiefSlider.prototype._moveToPrev = function() {
+ChiefSlider.prototype._moveToPrev = function () {
   this._direction = 'prev';
   this._move();
 };
 
 // _moveTo
-ChiefSlider.prototype._moveTo = function(index) {
+ChiefSlider.prototype._moveTo = function (index) {
   var $indicatorList = this._$indicatorList;
   var nearestIndex = null;
   var diff = null;
@@ -403,7 +403,7 @@ ChiefSlider.prototype._moveTo = function(index) {
 };
 
 // _autoplay
-ChiefSlider.prototype._autoplay = function(action) {
+ChiefSlider.prototype._autoplay = function (action) {
   if (!this._config.autoplay) {
     return;
   }
@@ -414,17 +414,17 @@ ChiefSlider.prototype._autoplay = function(action) {
   }
   if (this._intervalId === null) {
     this._intervalId = setInterval(
-        function() {
-          this._direction = 'next';
-          this._move();
-        }.bind(this),
-        this._config.interval
+      function () {
+        this._direction = 'next';
+        this._move();
+      }.bind(this),
+      this._config.interval
     );
   }
 };
 
 // _refresh
-ChiefSlider.prototype._refresh = function() {
+ChiefSlider.prototype._refresh = function () {
   // create some constants
   var $itemList = this._$itemList;
   var widthItem = $itemList[0].offsetWidth;
@@ -465,9 +465,9 @@ ChiefSlider.prototype._refresh = function() {
   this._setActiveClass();
 
   window.requestAnimationFrame(
-      function() {
-        this._$items.classList.remove(SLIDER_TRANSITION_OFF);
-      }.bind(this)
+    function () {
+      this._$items.classList.remove(SLIDER_TRANSITION_OFF);
+    }.bind(this)
   );
 
   // hide prev arrow for non-infinite slider
@@ -492,15 +492,15 @@ ChiefSlider.prototype._refresh = function() {
 };
 
 // public
-ChiefSlider.prototype.next = function() {
+ChiefSlider.prototype.next = function () {
   this._moveToNext();
 };
-ChiefSlider.prototype.prev = function() {
+ChiefSlider.prototype.prev = function () {
   this._moveToPrev();
 };
-ChiefSlider.prototype.moveTo = function(index) {
+ChiefSlider.prototype.moveTo = function (index) {
   this._moveTo(index);
 };
-ChiefSlider.prototype.refresh = function() {
+ChiefSlider.prototype.refresh = function () {
   this._refresh();
 };

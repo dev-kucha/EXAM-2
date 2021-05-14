@@ -40,6 +40,8 @@
   /* padding-right: 15px; */   
   }
 
+
+
 /* кнопки влево и вправо */
 
 .slider__control {
@@ -65,12 +67,12 @@
 }
 
 .slider__control[data-slide='prev'] {
-  left: -50px;
+  left: -8.7rem; /*  */
   transform: rotate(90deg);
 }
 
 .slider__control[data-slide='next'] {
-  right: -50px;
+  right: -8.7rem; /*  */
   transform: rotate(-90deg);
 }
 
@@ -140,8 +142,8 @@
   height: 5px; */
   width: 9px; /*  */
   height: 9px; /*  */
-  margin-right: 3px;
-  margin-left: 3px;
+  margin-right: 20px;
+  margin-left: 20px;
   text-indent: -999px;
   cursor: pointer;
   /* background-color: rgba(255, 255, 255, 0.5); */

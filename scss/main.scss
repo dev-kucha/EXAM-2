@@ -406,7 +406,11 @@ h1, h2, h3, h4 {
         font-family: $gothambold;
         font-size: 2.2rem;
         text-transform: uppercase;
+        line-height: 3.2rem;
         color: $darkblue;
+        height: 6rem;
+        overflow: hidden;
+        margin-bottom: 2.4rem;
     }
     &__subtitle {
         font-family: $OpenSans;
@@ -415,14 +419,16 @@ h1, h2, h3, h4 {
         color: $darkgrey;
         height: 6rem;
         overflow: hidden;
+        margin-bottom: 5.2rem;
     }
     &__discription {
-
+        height: auto;
     }
 }
 
 .write {
     position: relative;
+    
     &__pic {
         width: 6rem;
         height: 6rem;
@@ -465,6 +471,8 @@ h1, h2, h3, h4 {
 
     &__item {
         background-color: $blue;
+        text-align: center;
+        padding-top: 35%;
         //border: 1px dotted maroon;
     }
 
