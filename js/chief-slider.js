@@ -119,7 +119,12 @@ ChiefSlider.prototype._addEventListener = function () {
   var $items = this._$items;
   var config = this._config;
   function onClick(e) {
-    var $target = e.target;
+    var $target;
+    if (e.target.tagName == 'svg') {
+      e.preventDefault();
+      e.target.closest('a');
+      $target = e.target.closest('a');
+    } else $target = e.target;
     this._autoplay('stop');
     if ($target.classList.contains(CONTROL_CLASS)) {
       e.preventDefault();
