@@ -113,24 +113,20 @@ function ChiefSlider(selector, config) {
   this._autoplay();
 }
 
-/* Деактивація штатних посилань на контролах горизонтального слайдера */
-/* let hSliderControlsArrow = document.querySelectorAll('.slider__control i');
-window.addEventListener('click', function (e) {
-  for (arrow of hSliderControlsArrow) {
-    ChiefSlider.prototype.onClick(e);
-
-  }
-}) */
-
 // подключения обработчиков событий для слайдера
 ChiefSlider.prototype._addEventListener = function () {
   var $root = this._$root;
   var $items = this._$items;
   var config = this._config;
   function onClick(e) {
-    var $target = e.target;
+    var $target;
+    if (e.target.tagName = 'svg') {
+      e.preventDefault();
+      e.target.closest('a');
+      $target = e.target.closest('a');
+    } else $target = e.target;
     this._autoplay('stop');
-    if ($target.classList.contains(CONTROL_CLASS) || $target.querySelectorAll('.slider__control i')) {
+    if ($target.classList.contains(CONTROL_CLASS)) {
       e.preventDefault();
       this._direction = $target.dataset.slide;
       this._move();
