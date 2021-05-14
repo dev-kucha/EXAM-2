@@ -120,7 +120,7 @@ ChiefSlider.prototype._addEventListener = function () {
   var config = this._config;
   function onClick(e) {
     var $target;
-    if (e.target.tagName = 'svg') {
+    if (e.target.tagName == 'svg') {
       e.preventDefault();
       e.target.closest('a');
       $target = e.target.closest('a');
