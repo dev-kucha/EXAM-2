@@ -78,10 +78,11 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /* Деактивація штатних посилань на контролах горизонтального слайдера */
-let hSliderControlsArrow = document.querySelectorAll('.slider__control i');
+/* let hSliderControlsArrow = document.querySelectorAll('.slider__control i');
 window.addEventListener('click', function (e) {
     for (arrow of hSliderControlsArrow) {
         e.preventDefault();
+
     }
-})
+}) */
 /* не працює як слід*/
