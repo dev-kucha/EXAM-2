@@ -80,4 +80,3 @@ window.addEventListener('click', function (e) {
         e.preventDefault();
     }
 })
-/* Ще не працює як слід, потрібно делегувати клік батьку */
