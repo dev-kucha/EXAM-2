@@ -61,6 +61,22 @@ li {
   }
 }
 
+.btn {
+  display: inline-block;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: #2c4058;
+  padding: 2rem 4.5rem;
+  background: none;
+  border: 1px #2c4058 solid;
+  cursor: pointer;
+}
+
+.btn:hover, .btn:focus {
+  background: #2c4058;
+  color: #ffffff;
+}
+
 .bulb {
   display: inline-block;
   width: 9px;

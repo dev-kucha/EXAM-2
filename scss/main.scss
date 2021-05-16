@@ -81,6 +81,21 @@ li {
     }
 }
 
+.btn {
+    display: inline-block;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: $darkblue;
+    padding: 2rem 4.5rem;
+    background: none;
+    border: 1px $darkblue solid;
+    cursor: pointer;
+}
+.btn:hover, .btn:focus {
+    background: $darkblue;
+    color: $white;
+}
+
 .bulb {
     display: inline-block;
     width: 9px;
