@@ -33,6 +33,10 @@ body, h1, h2, h3, h4, input {
   margin: 0;
   padding: 0;
   border: 0;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 a {
@@ -584,6 +588,7 @@ li {
 
 .submitForm {
   text-align: right;
+  position: relative;
 }
 
 .submitForm__input {
@@ -608,6 +613,32 @@ li {
 
 .submitForm__input:active {
   background: none;
+}
+
+.submitForm__input:focus:invalid {
+  color: red;
+  border-color: red;
+}
+
+.submitForm__input:valid {
+  color: green;
+  border-color: green;
+}
+
+.submitForm__input:-internal-autofill-selected {
+  background-color: transparent;
+}
+
+.submitForm__error {
+  width: 100%;
+  text-align: left;
+  color: red;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.submitForm__error--active {
+  padding: 2rem 4rem;
 }
 
 .submitForm__submitBtn {

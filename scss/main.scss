@@ -53,6 +53,11 @@ body, h1, h2, h3, h4, input {
     margin: 0;
     padding: 0;
     border: 0;
+    background-image:none;
+    background-color:transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
     }
 
 a {
@@ -520,8 +525,8 @@ li {
 }
 
 .submitForm {
-
     text-align: right;
+    position: relative;
 
     &__input {
         -webkit-appearance: none;
@@ -540,17 +545,36 @@ li {
     &__input:hover, &__input:focus {
         color: $darkblue;
         border-color: $darkblue;
-        //outline: none;
     }
 
     &__input:active {
         background: none;
     }
 
-    &__name {
+    &__input:focus:invalid {
+        color: red;
+        border-color: red;
+    }
+      
+    &__input:valid {
+        color: green;
+        border-color: green;
     }
 
-    &__email {
+    &__input:-internal-autofill-selected {
+        background-color: transparent;
+    }
+
+    &__error {
+        width: 100%;
+        text-align: left;
+        color: red;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    &__error--active {
+        padding: 2rem 4rem;
     }
 
     &__submitBtn {
@@ -563,11 +587,14 @@ li {
         border: 1px $darkblue solid;
         cursor: pointer;
     }
+
     &__submitBtn:hover, &__submitBtn:focus {
         background: $darkblue;
         color: $white;
     }
 }
+
+
 
 .footer {
     background: url(../img/bg-4.png), linear-gradient( 45deg, rgb(85,183,255) 0%, rgb(126,90,255) 100%);

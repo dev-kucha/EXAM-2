@@ -73,10 +73,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-/* Деактивація штатних посилань на контролах горизонтального слайдера */
-/* let hSliderControlsArrow = document.querySelectorAll('.slider__control i');
-window.addEventListener('click', function (e) {
-    for (arrow of hSliderControlsArrow) {
-        e.preventDefault();
+/* Валідація форми */
+const form = document.querySelector('.submitForm');
+const sendName = document.getElementById('send_name');
+const sendemail = document.getElementById('send_email');
+const error = document.querySelector('.submitForm__error');
+
+sendemail.addEventListener("input", function (event) {
+    if (sendemail.validity.valid) {
+        error.innerHTML = "";
+        error.className = "submitForm__error";
     }
-}) */
+}, false
+);
+form.addEventListener("submit", function (event) {
+    if (!sendemail.validity.valid) {
+        event.preventDefault();
+        error.innerHTML = "I expect an e-mail, darling!";
+        error.className = "submitForm__error .submitForm__error--active";
+    }
+}, false);

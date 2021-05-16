@@ -355,11 +355,13 @@
                     </div>
                 </div>
                 <div class="colls__coll coll-2">
-                    <form class="submitForm" method="get" action="#contact">
+                    <form class="submitForm" method="get" novalidate action="#contact">
+                        <!-- action="#contact"  -->
                         <input class="submitForm__input submitForm__name" type="text" name="name" id="send_name"
-                            placeholder="Mollie Medina">
+                            placeholder="Mollie Medina" required minlength="2">
                         <input class="submitForm__input submitForm__email" type="email" name="email" id="send_email"
-                            placeholder="Email">
+                            placeholder="Email" required>
+                        <span class="submitForm__error .submitForm__error--active" aria-live="polite"></span>
                         <button class="submitForm__submitBtn">Submit</button>
 
                     </form>
