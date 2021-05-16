@@ -115,16 +115,18 @@ function ChiefSlider(selector, config) {
 
 // подключения обработчиков событий для слайдера
 ChiefSlider.prototype._addEventListener = function () {
+
   var $root = this._$root;
   var $items = this._$items;
   var config = this._config;
   function onClick(e) {
     var $target;
-    if (e.target.tagName == 'svg') {
-      e.preventDefault();
-      e.target.closest('a');
-      $target = e.target.closest('a');
-    } else $target = e.target;
+    $target = e.target;
+    console.log(e.target);
+    if (e.target.tagName == 'svg' || e.target.tagName == 'path') {
+      $target = e.target.closest('div');
+    }
+    console.log(e.target);
     this._autoplay('stop');
     if ($target.classList.contains(CONTROL_CLASS)) {
       e.preventDefault();

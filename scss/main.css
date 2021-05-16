@@ -26,7 +26,7 @@ html {
   font-size: 10px;
 }
 
-body {
+body, h1, h2, h3, h4, input {
   font-family: "Gotham", "Open Sans", sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -42,10 +42,6 @@ a {
 
 li {
   list-style: none;
-}
-
-h1, h2, h3, h4 {
-  margin: 0;
 }
 
 .wrapper {
@@ -565,8 +561,53 @@ h1, h2, h3, h4 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.submitForm {
+  text-align: right;
+}
+
+.submitForm__input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  display: block;
+  width: 100%;
+  font-family: "GothamBook", "Open Sans", sans-serif;
+  font-size: 1.8rem;
+  color: #4b5562;
+  padding-bottom: 2rem;
+  border-bottom: 1px #4b5562 solid;
+  margin-bottom: 4.6rem;
+  outline: none;
+}
+
+.submitForm__input:hover, .submitForm__input:focus {
+  color: #2c4058;
+  border-color: #2c4058;
+}
+
+.submitForm__input:active {
+  background: none;
+}
+
+.submitForm__submitBtn {
+  display: inline-block;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: #2c4058;
+  padding: 2rem 4.5rem;
+  background: none;
+  border: 1px #2c4058 solid;
+  cursor: pointer;
+}
+
+.submitForm__submitBtn:hover, .submitForm__submitBtn:focus {
+  background: #2c4058;
+  color: #ffffff;
 }
 
 .footer {
